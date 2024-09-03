@@ -1,7 +1,7 @@
 # ReportDesigner
 
 
-[![Bootstrap Admin Template](https://res.cloudinary.com/da9ywiyfc/image/upload/v1725386575/ReportDesigner_pwrlfg.jpg)](https://github.com/d82krai/QSReportDesigner)
+![ReportDesigner](https://res.cloudinary.com/da9ywiyfc/image/upload/v1725386575/ReportDesigner_pwrlfg.jpg)
 
 #### Run
 
