@@ -1,4 +1,7 @@
 // Here you can add other styles
+$dynamicBottomMargin: var(--dynamic-bottom-margin, "1in") + px;
+
+
 .designerPageBg {
     background-color: lightgrey;
     width: 100%;
@@ -9,30 +12,82 @@
 
 .designerPage {
     background-color: #fff;
-    width: 8.5in;
-    height: 11in;
     box-shadow: 5px 5px 5px gray;
     margin: 10px;
+    position: relative;
 }
 
-.designerPageContent
-{
+.designerPageContent {
     margin: 1cm;
 }
 
-.designerPageZoomCtrl
-{
+.designerPageZoomCtrl {
     width: 200px;
     float: right;
 }
 
 /*Margin Box*/
-.txtMargin{
+.txtMargin {
     width: 60px;
 }
 
-.topMargin{
-    height: 10px;
-    background-color: red;
-    color: red;
+.designerPage:after {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    height: $dynamicBottomMargin;
+    background: #c00;
+    content: "";
+    width: 100%;
+    display: block;
 }
+
+.designerPage:before {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    height: var(--dynamic-top-margin, "1in");
+    background: #c00;
+    content: "";
+    width: 100%;
+    display: block;
+}
+
+/*
+.topMargin {
+    height: 1in;
+    color: red;
+    border-bottom: 1px solid red;
+}
+
+.bottomMargin {
+    height: 1in;
+    color: red;
+    border-bottom: 1px solid red;
+}
+
+.leftMargin {
+    width: 1in;
+    color: red;
+    border-top: 1px solid red;
+
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.rightMargin {
+    width: 1in;
+    color: red;
+    border-top: 1px solid red;
+
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+*/
