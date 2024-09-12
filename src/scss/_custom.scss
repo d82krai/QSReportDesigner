@@ -1,6 +1,6 @@
 // Here you can add other styles
-$dynamicBottomMargin: var(--dynamic-bottom-margin, "1in") + px;
-
+$dynamicTopMargin: var(--dynamic-top-margin, "1in");
+$dynamicBottomMargin: var(--dynamic-bottom-margin, "1in");
 
 .designerPageBg {
     background-color: lightgrey;
@@ -31,26 +31,71 @@ $dynamicBottomMargin: var(--dynamic-bottom-margin, "1in") + px;
     width: 60px;
 }
 
-.designerPage:after {
+.designerPage::after {
+    content: '';
+    position: absolute;
+    top: $dynamicTopMargin;
+    left: 50%;
+    width: 100px;
+    height: $dynamicBottomMargin;
+    border: 1px solid red;
+    transform: translate(-50%, -50%); // Center the square
+    z-index: 100;
+}
+
+/*
+.designerPage::after {
     position: absolute;
     left: 0;
-    top: 100%;
-    height: $dynamicBottomMargin;
-    background: #c00;
+    top: $dynamicBottomMargin;
+    height: 1px;
+    content: "";
+    width: 100%;
+    display: block;
+    border-top: 1px solid red;
+    border-right: 1px solid red;
+}
+
+.designerPage::before {
+    position: absolute;
+    left: 0;
+    height: $dynamicTopMargin;
+    border-bottom: 1px solid red;
+    border-left: 1px solid red;
     content: "";
     width: 100%;
     display: block;
 }
+    */
 
-.designerPage:before {
+.designerPage::left {
     position: absolute;
     left: 0;
-    top: 100%;
-    height: var(--dynamic-top-margin, "1in");
-    background: #c00;
+    border-right: 1px solid red;
     content: "";
     width: 100%;
     display: block;
+
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.designerPage::right {
+    position: absolute;
+    right: 0;
+    border-left: 1px solid red;
+    content: "";
+    width: 100%;
+    display: block;
+
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
 }
 
 /*

@@ -35,12 +35,12 @@ const Designer = () => {
 
     const handleTopMarginChange = value => {
         setTopMarginValue(value);
-        document.documentElement.style.setProperty('--dynamic-top-margin', value + 'px');
+        document.documentElement.style.setProperty('--dynamic-top-margin', value + 'in');
     };
 
     const handleBottomMarginChange = value => {
         setBottomMarginValue(value);
-        document.documentElement.style.setProperty('--dynamic-bottom-margin', value + 'px');
+        document.documentElement.style.setProperty('--dynamic-bottom-margin', (pageHeightValue - value) + 'in');
     };
 
     const handleLeftMarginChange = value => {
@@ -238,7 +238,7 @@ const Designer = () => {
                             }}
                         >
 
-                            <div className='designerPageContent' style={{
+                            <div className='designerPageContent' contenteditable="true" style={{
                                 marginTop: `${topMarginValue}in`,
                                 marginBottom: `${bottomMarginValue}in`,
                                 marginLeft: `${leftMarginValue}in`,
